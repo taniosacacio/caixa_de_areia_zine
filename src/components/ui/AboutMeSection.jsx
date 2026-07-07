@@ -40,16 +40,7 @@ const formatRushText = (text) => {
   return nodes;
 };
 
-const aboutMeTexts = [
-  "Se algo mudou em você após conhecer o RUSH, sustento que aqui é o lugar que você vai apreciar.",
-  "Sou Tânios Acácio, e vou contar minha história imensa para ser postada num site. Após assistir o show Rush in Rio em dvd em 2004, percebi que houve algo que mudou em minha vida. O guitarrista desenhava o som, o baterista tocava de forma absurdamente precisa, e o baixista cantava altíssimo e tinha um timbre fascinante que eu jamais havia ouvido... Alex Lifeson, Neil Peart e Geddy Lee... três caras fazendo aquele som, foi de fato o espetáculo mais impressionante de uma banda que eu já havia visto (show gravado coincidentemente em meu aniversário).",
-  "De lá para cá, o RUSH tornou-se algo além da música, e fico muito feliz que eu descobri isso sem seguir modinha, sem necessariamente ter que participar de algum grupo. Foi natural, é real.",
-  "Fui descobrindo mais sobre as letras, entendendo aquele micro-grande-cosmo do power-trio, a grandeza, e o que eu sempre falo: a improbabilidade de ter ocorrido. Uma banda oriunda de um país fora do eixo convencional de músicos renomados dos anos 70, a absoluta entrega e apreço pela qualidade e complexidade musical, a amizade sincera entre eles... pelos três. Improvavelmente três.",
-  "De lá para cá eu vim e voltei na criação de conteúdo sobre o RUSH, conheci e fiz muitos amigos nesse universo, assim como eu aposto que você também fez. Fui a muitos festivais de fãs (inclusive o maior do mundo - o @RushFest), abri espaço para bandas covers divulgarem o trabalho, juntei umas 40 ou 50 camisas, livros e mais livros, conheci alguns membros da equipe da banda, fiz parceria com editora e quando meu filho adoeceu com apenas um ano, criar conteúdo sobre o RUSH me ajudou a ter chão quando o meu abriu.",
-  "Para ajudar a bancar todo esse trabalho, criei o Portal Rush Brasil, marca que é registrada inclusive como fã-clube oficial (embora eu, particularmente não aprecie a nomenclatura). Um fã criativo, não um deslumbrado.",
-  "Gosto de escutar o RUSH, estudar, sentir e criar dentro daquele universo. Agora chegamos a esse palco digital, onde mais fãs e futuros fãs vão conhecer e colaborar com o meu trabalho, e nosso trabalho. Confere aí nosso desafio.",
-  "Abraços YYZ!"
-];
+
 
 export const AboutMeSection = ({ t }) => {
   const videoRef = useRef(null);
@@ -100,8 +91,8 @@ export const AboutMeSection = ({ t }) => {
               <img src={`${import.meta.env.BASE_URL}SFN - The Rush Cast - Portal Rush Brasil .png`} alt="Podcast Cover" className="spotify-cover-art" />
               <div className="spotify-text-group">
                 <span className="spotify-badge"><img src={`${import.meta.env.BASE_URL}Spotify-logo.png`} alt="Spotify Logo" className="spotify-icon-micro" /> A RUSH Fancast</span>
-                <h4 className="spotify-title-main">A História do <span className="no-break-brand">Portal Rush Brasil</span></h4>
-                <p className="spotify-subtitle">Ouça no maior podcast de RUSH do mundo</p>
+                <h4 className="spotify-title-main">{t.aboutMePodcastMain} <span className="no-break-brand">Portal Rush Brasil</span></h4>
+                <p className="spotify-subtitle">{t.aboutMePodcastSub}</p>
               </div>
               <div className="spotify-play-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -119,10 +110,10 @@ export const AboutMeSection = ({ t }) => {
         >
           <div className="about-me-story-box">
             <h2 className="about-me-title">
-              <span className="highlight-rush" style={{ textTransform: 'none' }}>RUSH:</span> <span className="highlight-tanios">16 Anos Criando <br /> Além do Improvável</span>
+              <span className="highlight-rush" style={{ textTransform: 'none' }}>RUSH:</span> <span className="highlight-tanios">{t.aboutMeTitleMain}</span>
             </h2>
             <div className={`about-me-paragraphs ${isExpanded ? 'expanded' : ''}`}>
-              {aboutMeTexts.map((text, index) => (
+              {t.aboutMeTexts && t.aboutMeTexts.map((text, index) => (
                 <p key={index}>{formatRushText(text)}</p>
               ))}
             </div>
@@ -130,10 +121,10 @@ export const AboutMeSection = ({ t }) => {
               className="about-me-expand-btn" 
               onClick={() => setIsExpanded(!isExpanded)}
             >
-              {isExpanded ? 'Recolher' : 'Expandir'}
+              {isExpanded ? t.aboutMeCollapse : t.aboutMeExpand}
             </button>
             <div className="about-me-author author">
-              <span className="highlight-tanios">Tânios Rush Acácio</span> - <span className="highlight-portal">Criador do Portal Rush Brasil</span>
+              <span className="highlight-tanios">Tânios Rush Acácio</span> - <span className="highlight-portal">{t.aboutMeAuthorRole}</span>
             </div>
           </div>
         </motion.div>
