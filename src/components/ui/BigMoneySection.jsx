@@ -136,9 +136,9 @@ export const BigMoneySection = ({ language }) => {
           ))}
         </motion.h4>
 
-        <h3 className="big-money-subtitle">{highlightEditorialText(text.title)}</h3>
+        <h3 className="big-money-subtitle hollow-text-neon">{highlightEditorialText(text.title)}</h3>
         
-        <p className="big-money-paragraph">{highlightEditorialText(text.p1)}</p>
+        <p className="rush-font-p1">{highlightEditorialText(text.p1)}</p>
         <p className="big-money-paragraph">{highlightEditorialText(text.p2)}</p>
         <p className="big-money-paragraph highlight-paragraph">{highlightEditorialText(text.p3)}</p>
 
@@ -157,17 +157,17 @@ export const BigMoneySection = ({ language }) => {
           {text.goals.map((g, idx) => (
             <motion.div 
               key={idx} 
-              className={`editorial-goal-card goal-card-${idx}`}
+              className={`big-money-goal-card bg-money-card-${idx}`}
               whileHover={{ 
-                scale: 1.02, 
-                borderRadius: "8px 8px 8px 8px"
+                scale: 1.03,
+                rotateZ: idx % 2 === 0 ? 1 : -1
               }}
               transition={{ type: 'spring', stiffness: 200, damping: 15 }}
               onClick={() => handleGoalClick(idx)}
             >
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1, textAlign: 'left' }}>
-                <span style={{ fontSize: '0.85rem', color: '#10b981', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{g.name}</span>
-                <span className="goal-label" style={{ fontWeight: 'bold' }}>{highlightEditorialText(g.label)}</span>
+                <span className="goal-name-hollow">{g.name}</span>
+                <span className="goal-label" style={{ fontWeight: 'bold', color: '#fffdf6', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{highlightEditorialText(g.label)}</span>
               </div>
               
               <motion.div
@@ -178,7 +178,7 @@ export const BigMoneySection = ({ language }) => {
                 <ArrowRight size={24} />
               </motion.div>
 
-              <span className="goal-value" style={{ flex: 1, textAlign: 'right' }}>{g.value}</span>
+              <span className="goal-value" style={{ flex: 1, textAlign: 'right', color: '#fffdf6', fontWeight: '900', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{g.value}</span>
             </motion.div>
           ))}
         </div>
