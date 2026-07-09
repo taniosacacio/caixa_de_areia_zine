@@ -8,7 +8,7 @@
 }
 
 .big-money-card-layout {
-  background-color: #f0fdf4;
+  background-color: #a7f3d0; /* Greener background */
   border-radius: 12px;
   padding: 40px;
   box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.8);
@@ -67,16 +67,7 @@
   letter-spacing: 2px;
 }
 
-.rush-font-p1 {
-  font-family: 'SnakesAndArrowsAltBold', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  text-align: center;
-  color: #111;
-  text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-  margin-bottom: 2rem;
-  padding: 0 15px;
-}
+/* Removed rush-font-p1 */
 
 .big-money-paragraph {
   font-size: 1.1rem;
@@ -137,22 +128,20 @@
   border-color: #ff5a36;
 }
 
-.goal-name-hollow {
+.goal-name-title {
   font-family: 'Bebas Neue Pro', 'Impact', sans-serif;
-  font-size: 2rem;
-  color: transparent;
-  -webkit-text-stroke: 1.5px #fffdf6;
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 15px rgba(0,0,0,0.3);
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: block;
   transition: all 0.3s ease;
 }
 
-.big-money-goal-card:hover .goal-name-hollow {
-  color: #fffdf6;
-  -webkit-text-stroke: 0px;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 10px #ff5a36;
+.big-money-goal-card:hover .goal-name-title {
+  color: #ff5a36;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 15px #fff;
 }
 
 .big-money-note {

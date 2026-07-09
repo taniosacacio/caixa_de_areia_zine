@@ -138,7 +138,7 @@ export const BigMoneySection = ({ language }) => {
 
         <h3 className="big-money-subtitle hollow-text-neon">{highlightEditorialText(text.title)}</h3>
         
-        <p className="rush-font-p1">{highlightEditorialText(text.p1)}</p>
+        <p className="big-money-paragraph">{highlightEditorialText(text.p1)}</p>
         <p className="big-money-paragraph">{highlightEditorialText(text.p2)}</p>
         <p className="big-money-paragraph highlight-paragraph">{highlightEditorialText(text.p3)}</p>
 
@@ -166,8 +166,8 @@ export const BigMoneySection = ({ language }) => {
               onClick={() => handleGoalClick(idx)}
             >
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1, textAlign: 'left' }}>
-                <span className="goal-name-hollow">{g.name}</span>
-                <span className="goal-label" style={{ fontWeight: 'bold', color: '#fffdf6', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{highlightEditorialText(g.label)}</span>
+                <span className="goal-name-title">{g.name}</span>
+                <span className="goal-label" style={{ fontWeight: 'bold', color: '#fffdf6', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '1.4rem', marginTop: '4px' }}>{highlightEditorialText(g.label)}</span>
               </div>
               
               <motion.div
@@ -178,7 +178,7 @@ export const BigMoneySection = ({ language }) => {
                 <ArrowRight size={24} />
               </motion.div>
 
-              <span className="goal-value" style={{ flex: 1, textAlign: 'right', color: '#fffdf6', fontWeight: '900', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{g.value}</span>
+              <span className="goal-value" style={{ flex: 1, textAlign: 'right', color: '#fffdf6', fontWeight: '900', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '1.4rem' }}>{g.value}</span>
             </motion.div>
           ))}
         </div>
