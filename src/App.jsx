@@ -18,7 +18,6 @@ import { BuyMeCoffeeCard } from './components/ui/buy-me-coffee-card';
 import { PixCard } from './components/ui/PixCard';
 import { AboutMeSection } from './components/ui/AboutMeSection';
 import { GeddyEasterEgg } from './components/ui/GeddyEasterEgg';
-import { GeddyEasterEggV2 } from './components/ui/GeddyEasterEggV2';
 import { CardCarousel } from './components/ui/CardCarousel';
 import { translations } from './translations.jsx';
 import { BigMoneyCard } from './components/ui/BigMoneyCard';
@@ -588,27 +587,6 @@ const App = () => {
           onSuccess={() => {
             setIsGershonActive(true);
             document.getElementById('grid')?.scrollIntoView({ behavior: 'smooth' });
-          }} 
-          t={t} 
-        />
-      </div>
-
-      <div id="easter-egg-v2" style={{ position: 'relative', marginTop: '4rem' }}>
-        <SectionSideLabel number="6b" title="EASTER EGG (CAIXA DE AREIA)" />
-        <h2 style={{
-            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-            fontWeight: '900',
-            color: '#fffdf6',
-            textAlign: 'center',
-            fontFamily: "'Bebas Neue Pro', 'Impact', sans-serif",
-            letterSpacing: '0.05em',
-            marginBottom: '2rem'
-          }}>
-            TESTE: CAIXA DE AREIA
-        </h2>
-        <GeddyEasterEggV2 
-          onSuccess={() => {
-            console.log('Easter Egg V2 solved!');
           }} 
           t={t} 
         />
