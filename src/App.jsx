@@ -363,7 +363,7 @@ const App = () => {
             <div className="horizontal-badge-final desktop-only-cover">
               VERSÃO HORI
               <img 
-                src={`${import.meta.env.BASE_URL}ZINELOGO/Zine-Logo-Modelo-no-elements.png`} 
+                src={`${import.meta.env.BASE_URL}ZINELOGO/Zine-Logo-Modelo-no-elements-preview.png`} 
                 alt="Z" 
                 className="img-z" 
               />
