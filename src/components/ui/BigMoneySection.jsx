@@ -138,14 +138,19 @@ export const BigMoneySection = ({ language }) => {
 
         <h3 className="big-money-subtitle hollow-text-neon">{highlightEditorialText(text.title)}</h3>
         
-        <p className="rush-font-p1">{highlightEditorialText(text.p1)}</p>
-        <p className="big-money-paragraph">{highlightEditorialText(text.p2)}</p>
-        <p className="big-money-paragraph highlight-paragraph">{highlightEditorialText(text.p3)}</p>
-
-        <div className="big-money-campaign-box">
-          <strong>{highlightEditorialText(text.campaignPeriodTitle)}</strong><br/>
-          {text.campaignStart}<br/>
-          {text.campaignEnd}
+        <div className="big-money-modern-grid">
+          <div className="big-money-text-content">
+            <p className="rush-font-p1">{highlightEditorialText(text.p1)}</p>
+            <p className="rush-font-p2">{highlightEditorialText(text.p2)}</p>
+            <p className="big-money-paragraph highlight-paragraph">{highlightEditorialText(text.p3)}</p>
+          </div>
+          <div className="big-money-campaign-box">
+            <h4 className="campaign-box-title">{highlightEditorialText(text.campaignPeriodTitle)}</h4>
+            <div className="campaign-dates">
+              <span className="campaign-date-item">{text.campaignStart}</span>
+              <span className="campaign-date-item">{text.campaignEnd}</span>
+            </div>
+          </div>
         </div>
 
         <p className="editorial-conditions-intro" style={{marginTop: '2.5rem'}}>
@@ -167,7 +172,7 @@ export const BigMoneySection = ({ language }) => {
             >
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1, textAlign: 'left' }}>
                 <span className="goal-name-title">{g.name}</span>
-                <span className="goal-label" style={{ fontWeight: 'bold', color: '#fffdf6', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '1.4rem', marginTop: '4px' }}>{highlightEditorialText(g.label)}</span>
+                <span className="goal-label" style={{ fontWeight: 'bold', color: '#10b981', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '2.5rem', marginTop: '4px' }}>{highlightEditorialText(g.label)}</span>
               </div>
               
               <motion.div
@@ -178,7 +183,7 @@ export const BigMoneySection = ({ language }) => {
                 <ArrowRight size={24} />
               </motion.div>
 
-              <span className="goal-value" style={{ flex: 1, textAlign: 'right', color: '#fffdf6', fontWeight: '900', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '1.4rem' }}>{g.value}</span>
+              <span className="goal-value" style={{ flex: 1, textAlign: 'right', color: '#fffdf6', fontWeight: '900', textShadow: '0 2px 4px rgba(0,0,0,0.8)', fontSize: '1.8rem' }}>{g.value}</span>
             </motion.div>
           ))}
         </div>
