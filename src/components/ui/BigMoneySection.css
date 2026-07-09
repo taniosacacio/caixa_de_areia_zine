@@ -14,6 +14,24 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   border: 4px solid #ff5a36;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.big-money-card-layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {

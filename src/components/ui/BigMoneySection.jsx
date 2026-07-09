@@ -101,7 +101,10 @@ export const BigMoneySection = ({ language }) => {
         </div>
       )}
 
-      <div className="big-money-card-layout">
+      <div 
+        className="big-money-card-layout"
+        style={{ '--bg-image': `url("${import.meta.env.BASE_URL}The Big Money/money rush contribuicao.svg")` }}
+      >
         {/* The Big Money Title */}
         <motion.h4 
           className="editorial-big-money-title"
