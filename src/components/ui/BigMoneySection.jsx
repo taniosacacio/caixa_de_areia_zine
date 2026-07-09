@@ -10,28 +10,52 @@ export const BigMoneySection = ({ language }) => {
   // Content dictionary
   const content = {
     pt: {
-      p3: 'Bem, o feedback e o rico e grande dinheiro dos nossos fãs (e futuros fãs) que vão pautar esse trabalho do Portal Rush Brasil. Veja nossas condições:',
+      title: 'VAI ROLAR OU VAI FLOPAR?',
+      p1: 'Temos um propósito muito claro com essa ZINE: entregar conteúdo de altíssima qualidade para os fãs, unindo conhecimento profundo e entretenimento. É o que já fazemos há mais de 15 anos, mas agora no formato mais foda que já criamos.',
+      p2: 'Tem de tudo: bibliografia, novidades, curiosidades, jogos, easter eggs, comércio e o coração da parada: a HISTÓRIA DOS FÃS DE RUSH.',
+      p3: 'CONTRIBUA com o seu "THE BIG MONEY" e faça a PORTAL RUSH ZINE ROLAR de vez.',
+      campaignPeriodTitle: 'PERÍODO DA CAMPANHA:',
+      campaignStart: 'Início: 09 de julho',
+      campaignEnd: 'Término: 09 de agosto',
+      goalsIntro: 'A META DEFINE O RITMO:',
       goals: [
-        { value: 'Até $400', label: '1 edição mensal' },
-        { value: '$600', label: '2 edições mensais' },
-        { value: '$800', label: '3 edições mensais' }
-      ]
+        { label: '$400 dólares', value: 'Faremos 1 edição' },
+        { label: '$600 dólares', value: 'Faremos 2 edições' },
+        { label: '$800 dólares', value: 'Faremos 3 edições' }
+      ],
+      note: '(Nota: Para contribuições maiores ou parcerias, entre em contato direto pelo e-mail: zine@portalrushzine.com)'
     },
     en: {
-      p3: 'Well, the feedback and the rich and big money of our fans (and future fans) will guide this work of Portal Rush Brasil. See our goals:',
+      title: 'VAI ROLAR OU VAI FLOPAR?',
+      p1: 'Temos um propósito muito claro com essa ZINE: entregar conteúdo de altíssima qualidade para os fãs, unindo conhecimento profundo e entretenimento. É o que já fazemos há mais de 15 anos, mas agora no formato mais foda que já criamos.',
+      p2: 'Tem de tudo: bibliografia, novidades, curiosidades, jogos, easter eggs, comércio e o coração da parada: a HISTÓRIA DOS FÃS DE RUSH.',
+      p3: 'CONTRIBUA com o seu "THE BIG MONEY" e faça a PORTAL RUSH ZINE ROLAR de vez.',
+      campaignPeriodTitle: 'PERÍODO DA CAMPANHA:',
+      campaignStart: 'Início: 09 de julho',
+      campaignEnd: 'Término: 09 de agosto',
+      goalsIntro: 'A META DEFINE O RITMO:',
       goals: [
-        { value: 'Up to $400', label: '1 monthly edition' },
-        { value: '$600', label: '2 monthly editions' },
-        { value: '$800', label: '3 monthly editions' }
-      ]
+        { label: '$400 dólares', value: 'Faremos 1 edição' },
+        { label: '$600 dólares', value: 'Faremos 2 edições' },
+        { label: '$800 dólares', value: 'Faremos 3 edições' }
+      ],
+      note: '(Nota: Para contribuições maiores ou parcerias, entre em contato direto pelo e-mail: zine@portalrushzine.com)'
     },
     es: {
-      p3: 'Bueno, los comentarios y el rico y gran dinero de nossos fans (y futuros fans) guiarán este trabajo de Portal Rush Brasil. Mira nuestras metas:',
+      title: 'VAI ROLAR OU VAI FLOPAR?',
+      p1: 'Temos um propósito muito claro com essa ZINE: entregar conteúdo de altíssima qualidade para os fãs, unindo conhecimento profundo e entretenimento. É o que já fazemos há mais de 15 anos, mas agora no formato mais foda que já criamos.',
+      p2: 'Tem de tudo: bibliografia, novidades, curiosidades, jogos, easter eggs, comércio e o coração da parada: a HISTÓRIA DOS FÃS DE RUSH.',
+      p3: 'CONTRIBUA com o seu "THE BIG MONEY" e faça a PORTAL RUSH ZINE ROLAR de vez.',
+      campaignPeriodTitle: 'PERÍODO DA CAMPANHA:',
+      campaignStart: 'Início: 09 de julho',
+      campaignEnd: 'Término: 09 de agosto',
+      goalsIntro: 'A META DEFINE O RITMO:',
       goals: [
-        { value: 'Hasta $400', label: '1 edición mensal' },
-        { value: '$600', label: '2 ediciones mensuales' },
-        { value: '$800', label: '3 ediciones mensuales' }
-      ]
+        { label: '$400 dólares', value: 'Faremos 1 edición' },
+        { label: '$600 dólares', value: 'Faremos 2 ediciones' },
+        { label: '$800 dólares', value: 'Faremos 3 ediciones' }
+      ],
+      note: '(Nota: Para contribuições maiores ou parcerias, entre em contato direto pelo e-mail: zine@portalrushzine.com)'
     }
   };
 
@@ -78,17 +102,13 @@ export const BigMoneySection = ({ language }) => {
       )}
 
       <div className="big-money-card-layout">
-        <p className="editorial-conditions-intro">
-          {highlightEditorialText(text.p3)}
-        </p>
-        
         {/* The Big Money Title */}
         <motion.h4 
           className="editorial-big-money-title"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.5 }}
-          style={{ display: "inline-block", textAlign: "center", width: "100%" }}
+          style={{ display: "inline-block", textAlign: "center", width: "100%", marginBottom: "1rem" }}
         >
           {"THE BIG MONEY".split("").map((char, index) => (
             <motion.span
@@ -112,6 +132,22 @@ export const BigMoneySection = ({ language }) => {
             </motion.span>
           ))}
         </motion.h4>
+
+        <h3 className="big-money-subtitle">{highlightEditorialText(text.title)}</h3>
+        
+        <p className="big-money-paragraph">{highlightEditorialText(text.p1)}</p>
+        <p className="big-money-paragraph">{highlightEditorialText(text.p2)}</p>
+        <p className="big-money-paragraph highlight-paragraph">{highlightEditorialText(text.p3)}</p>
+
+        <div className="big-money-campaign-box">
+          <strong>{highlightEditorialText(text.campaignPeriodTitle)}</strong><br/>
+          {text.campaignStart}<br/>
+          {text.campaignEnd}
+        </div>
+
+        <p className="editorial-conditions-intro" style={{marginTop: '2.5rem'}}>
+          {highlightEditorialText(text.goalsIntro)}
+        </p>
 
         {/* Visual Goal/Conditions Grid (Gradated color) */}
         <div className="editorial-goals-grid">
@@ -140,6 +176,8 @@ export const BigMoneySection = ({ language }) => {
             </motion.div>
           ))}
         </div>
+        
+        <p className="big-money-note">{highlightEditorialText(text.note)}</p>
       </div>
     </section>
   );

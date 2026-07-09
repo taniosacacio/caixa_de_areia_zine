@@ -21,3 +21,49 @@
     padding: 24px;
   }
 }
+
+.big-money-subtitle {
+  font-family: 'Bebas Neue Pro', 'Impact', sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ff5a36;
+}
+
+.big-money-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  color: #333;
+}
+
+.highlight-paragraph {
+  font-weight: 800;
+  color: #111;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.big-money-campaign-box {
+  background-color: rgba(255, 90, 54, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 400px;
+  border: 2px dashed #ff5a36;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.big-money-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+}
