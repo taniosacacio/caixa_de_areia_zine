@@ -361,13 +361,11 @@ const App = () => {
 
             {/* FINAL HORIZONTAL BRANDING (Modelo 1 - Glitch Padrão) */}
             <div className="horizontal-badge-final desktop-only-cover">
-              VERSÃO HORI
-              <img 
+              <span>VERSÃO HORI</span><img 
                 src={`${import.meta.env.BASE_URL}ZINELOGO/Zine-Logo-Modelo-no-elements-preview.png`} 
                 alt="Z" 
                 className="img-z" 
-              />
-              ONTAL
+              /><span>ONTAL</span>
             </div>
 
             {/* Zine Cover SVG & Flash Mobile Version */}
