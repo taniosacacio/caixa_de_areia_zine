@@ -1,0 +1,23 @@
+.big-money-section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 24px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.big-money-card-layout {
+  background-color: #fffdf6;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 4px solid #ff5a36;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .big-money-card-layout {
+    padding: 24px;
+  }
+}

@@ -234,69 +234,6 @@ export const EditorialSection = ({ t, language }) => {
                   <span className="desktop-text">{highlightEditorialText(text.p2)}</span>
                   <span className="mobile-text">{highlightEditorialText(text.p2_mobile || text.p2)}</span>
                 </p>
-                
-                <p className="editorial-conditions-intro">
-                  {highlightEditorialText(text.p3)}
-                </p>
-                
-                {/* The Big Money Title */}
-                <motion.h4 
-                  className="editorial-big-money-title"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: false, amount: 0.5 }}
-                  style={{ display: "inline-block" }}
-                >
-                  {"THE BIG MONEY".split("").map((char, index) => (
-                    <motion.span
-                      key={index}
-                      style={{ display: "inline-block" }}
-                      variants={{
-                        hidden: { color: "#ff5a36", y: 0 },
-                        visible: {
-                          color: ["#ff5a36", "#10b981", "#10b981"], // Turns green (money color)
-                          y: [0, -8, 0], // slight bounce
-                          transition: {
-                            duration: 0.6,
-                            delay: index * 0.08,
-                            ease: "easeInOut",
-                            times: [0, 0.4, 1]
-                          }
-                        }
-                      }}
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </motion.span>
-                  ))}
-                </motion.h4>
-
-                {/* Visual Goal/Conditions Grid (Gradated color) */}
-                <div className="editorial-goals-grid">
-                  {text.goals.map((g, idx) => (
-                    <motion.div 
-                      key={idx} 
-                      className={`editorial-goal-card goal-card-${idx}`}
-                      whileHover={{ 
-                        scale: 1.02, 
-                        borderRadius: "8px 8px 8px 8px"
-                      }}
-                      transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                      onClick={() => handleGoalClick(idx)}
-                    >
-                      <span className="goal-label" style={{ flex: 1, textAlign: 'left', fontWeight: 'bold' }}>{highlightEditorialText(g.label)}</span>
-                      
-                      <motion.div
-                        animate={{ x: [0, 8, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                        style={{ display: 'flex', alignItems: 'center', opacity: 0.8, padding: '0 10px' }}
-                      >
-                        <ArrowRight size={24} />
-                      </motion.div>
-
-                      <span className="goal-value" style={{ flex: 1, textAlign: 'right' }}>{g.value}</span>
-                    </motion.div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

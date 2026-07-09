@@ -22,6 +22,7 @@ import { GeddyEasterEggV2 } from './components/ui/GeddyEasterEggV2';
 import { CardCarousel } from './components/ui/CardCarousel';
 import { translations } from './translations.jsx';
 import { BigMoneyCard } from './components/ui/BigMoneyCard';
+import { BigMoneySection } from './components/ui/BigMoneySection';
 import { EditorialSection } from './components/ui/EditorialSection';
 import { BlahahaSection } from './components/ui/BlahahaSection';
 import { SectionSideLabel } from './components/ui/SectionSideLabel';
@@ -327,11 +328,12 @@ const App = () => {
               <a href="#apoio" onClick={() => setIsMenuOpen(false)}>4. {t.navApoie}</a>
               <a href="#conteudos" onClick={() => setIsMenuOpen(false)}>5. 15 Anos de Conteúdos</a>
               <a href="#easter-egg" onClick={() => setIsMenuOpen(false)}>6. Easter Egg</a>
-              <a href="#anika" onClick={() => setIsMenuOpen(false)}>7. {t.navONovoCapitulo}</a>
-              <a href="#loja" onClick={() => setIsMenuOpen(false)}>8. {language === 'pt' ? 'Camisas do Rush' : language === 'en' ? 'Rush Shirts' : 'Camisetas de Rush'}</a>
-              <a href="#blahaha" onClick={() => setIsMenuOpen(false)}>9. BLAH-BLAH-HA!!!</a>
-              <a href="#RUSH-16-Anos-Alem-do-Improvavel" onClick={() => setIsMenuOpen(false)}>10. {t.navSobreMim}</a>
-              <a href="#livro" onClick={() => setIsMenuOpen(false)}>11. {t.navLivro}</a>
+              <a href="#big-money" onClick={() => setIsMenuOpen(false)}>7. The Big Money</a>
+              <a href="#anika" onClick={() => setIsMenuOpen(false)}>8. {t.navONovoCapitulo}</a>
+              <a href="#loja" onClick={() => setIsMenuOpen(false)}>9. {language === 'pt' ? 'Camisas do Rush' : language === 'en' ? 'Rush Shirts' : 'Camisetas de Rush'}</a>
+              <a href="#blahaha" onClick={() => setIsMenuOpen(false)}>10. BLAH-BLAH-HA!!!</a>
+              <a href="#RUSH-16-Anos-Alem-do-Improvavel" onClick={() => setIsMenuOpen(false)}>11. {t.navSobreMim}</a>
+              <a href="#livro" onClick={() => setIsMenuOpen(false)}>12. {t.navLivro}</a>
             </div>
           </motion.div>
         )}
@@ -612,9 +614,15 @@ const App = () => {
         />
       </div>
 
+      {/* ===== THE BIG MONEY SECTION ===== */}
+      <div id="big-money" style={{ position: 'relative', marginTop: '4rem' }}>
+        <SectionSideLabel number="7" title="THE BIG MONEY" />
+        <BigMoneySection language={language} />
+      </div>
+
       {/* ===== ANIKA NILLES SECTION (DW DRUMS STYLE) ===== */}
       <section className="anika-dw-section" id="anika" ref={anikaRef} style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#111' }}>
-        <SectionSideLabel number="7" title={t.navONovoCapitulo} />
+        <SectionSideLabel number="8" title={t.navONovoCapitulo} />
         {/* Video Background Mask */}
         <div className="anika-video-mask">
           {isAnikaInView && (
@@ -684,7 +692,7 @@ const App = () => {
 
       {/* ===== CAMISAS DO RUSH (BANNERS MOVED FROM TOP) ===== */}
       <div id="loja" style={{ position: 'relative', padding: '6rem 24px', backgroundColor: '#111' }}>
-        <SectionSideLabel number="8" title={language === 'pt' ? 'CAMISAS DO RUSH' : language === 'en' ? 'RUSH SHIRTS' : 'CAMISETAS DE RUSH'} />
+        <SectionSideLabel number="9" title={language === 'pt' ? 'CAMISAS DO RUSH' : language === 'en' ? 'RUSH SHIRTS' : 'CAMISETAS DE RUSH'} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div className="footer-banners-container">
             {[
@@ -707,19 +715,19 @@ const App = () => {
 
       {/* ===== BLAH BLAH BLAH HUMOR SECTION ===== */}
       <div style={{ position: 'relative' }}>
-        <SectionSideLabel number="9" title="BLAH-BLAH-HA!!!" />
+        <SectionSideLabel number="10" title="BLAH-BLAH-HA!!!" />
         <BlahahaSection t={t} language={language} />
       </div>
 
       {/* ===== SOBRE MIM SECTION (4TH FOLD) ===== */}
       <div style={{ position: 'relative' }}>
-        <SectionSideLabel number="10" title={t.navSobreMim} />
+        <SectionSideLabel number="11" title={t.navSobreMim} />
         <AboutMeSection t={t} />
       </div>
 
       {/* ===== CONTEXTUAL BOOK BANNER (MOVED DOWN) ===== */}
       <section className="bento-hero" id="livro" style={{ minHeight: 'auto', padding: '0 5% 4rem 5%', display: 'flex', justifyContent: 'center', position: 'relative' }}>
-        <SectionSideLabel number="11" title={t.navLivro} />
+        <SectionSideLabel number="12" title={t.navLivro} />
         <div className="bento-grid-footer" style={{ marginTop: 0, width: '100%', maxWidth: '1200px' }}>
           <a 
             href="https://www.belasletras.com.br/loja/busca.php?loja=1194178&palavra_busca=My+Effin+Life" 
