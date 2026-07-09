@@ -797,6 +797,36 @@
   .infographic-svgs-row {
     grid-template-columns: 1fr;
   }
+  
+  .swiss-main-title {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    margin-top: 10px;
+  }
+  
+  .poster-brand-header {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+  
+  .poster-brand-header span {
+    font-size: 1rem;
+  }
+  
+  .editorial-poster-frame {
+    padding: 30px 20px;
+  }
+  
+  .swiss-edition-badge {
+    margin-top: 20px;
+  }
+  
+  .editorial-tagline {
+    font-size: 1.8rem;
+  }
 }
 
 /* Poster Editorial Image Container & styled borders */

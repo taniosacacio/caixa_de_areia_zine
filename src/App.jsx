@@ -323,9 +323,9 @@ const App = () => {
             <div className="fullscreen-menu-links">
               <a href="#grid" onClick={() => setIsMenuOpen(false)}>1. {language === 'pt' ? 'Capa' : language === 'en' ? 'Cover' : 'Portada'}</a>
               <a href="#editorial" onClick={() => setIsMenuOpen(false)}>2. Editorial</a>
-              <a href="#apoio" onClick={() => setIsMenuOpen(false)}>3. {t.navApoie}</a>
-              <a href="#conteudos" onClick={() => setIsMenuOpen(false)}>4. 15 Anos de Conteúdos</a>
-              <a href="#entrevista" onClick={() => setIsMenuOpen(false)}>5. {t.navAEntrevista}</a>
+              <a href="#entrevista" onClick={() => setIsMenuOpen(false)}>3. {t.navAEntrevista}</a>
+              <a href="#apoio" onClick={() => setIsMenuOpen(false)}>4. {t.navApoie}</a>
+              <a href="#conteudos" onClick={() => setIsMenuOpen(false)}>5. 15 Anos de Conteúdos</a>
               <a href="#easter-egg" onClick={() => setIsMenuOpen(false)}>6. Easter Egg</a>
               <a href="#anika" onClick={() => setIsMenuOpen(false)}>7. {t.navONovoCapitulo}</a>
               <a href="#loja" onClick={() => setIsMenuOpen(false)}>8. {language === 'pt' ? 'Camisas do Rush' : language === 'en' ? 'Rush Shirts' : 'Camisetas de Rush'}</a>
@@ -420,52 +420,9 @@ const App = () => {
           <EditorialSection t={t} language={language} />
         </div>
 
-        {/* ===== SUPPORT SECTION (MOVED UP) ===== */}
-        <section className="footer" id="apoio" ref={footerRef} style={{ position: 'relative' }}>
-          <SectionSideLabel number="3" title={t.navApoie} />
-          {isFooterInView && (
-            <video 
-              className="footer-video-bg" 
-              src={`${import.meta.env.BASE_URL}Banner_Animado_Leve.mp4`} 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-            ></video>
-          )}
-          <div className="footer-video-overlay"></div>
-
-          <div className="footer-content-wrapper" style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
-            <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: "900px" }}>
-              <BuyMeCoffeeCard 
-                title={<span style={{ fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Quero Pagar um Café para essa Zine</span>}
-                description={<span style={{ fontSize: '1.15rem', lineHeight: '1.4', display: 'block', marginTop: '10px', fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Pague um Café para a Gente para termos mais e mais <span style={{ color: '#ff8b54', fontWeight: 'bold' }}>ZINES</span></span>}
-                image={`${import.meta.env.BASE_URL}imgi_17_buy-me-a-coffee.png`} 
-                coffeeLink="https://buymeacoffee.com/portalrushzine" 
-              />
-              <PixCard 
-                title={<span style={{ fontFamily: "'BeyondTheLightedStage', sans-serif" }}>🇧🇷 <span style={{color: '#009c3b'}}>P</span><span style={{color: '#ffdf00'}}>I</span><span style={{color: '#009c3b'}}>X</span>-<span style={{color: '#ff8b54'}}>ZINE</span></span>}
-                description={<span style={{ fontSize: '1.15rem', lineHeight: '1.4', display: 'block', marginTop: '10px', fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Faça um PIX e aumente as edições da <span style={{ color: '#ff8b54', fontWeight: 'bold' }}>ZINE</span> do Portal Rush Brasil.</span>}
-                borderColor="#009c3b"
-                borderBgColor="#ffdf00"
-                accentColor="#009c3b"
-                bannerImage={`${import.meta.env.BASE_URL}pix-qrcode.jpeg`} 
-                qrImage={`${import.meta.env.BASE_URL}pix-qrcode.jpeg`} 
-              />
-            </div>
-
-          </div>
-        </section>
-
-        {/* ===== 15 ANOS DE CONTEUDOS (MOVED FROM BOTTOM) ===== */}
-        <div id="conteudos" style={{ position: 'relative', paddingTop: '4rem' }}>
-          <SectionSideLabel number="4" title="15 ANOS DE CONTEÚDOS SOBRE O RUSH" />
-          <CardCarousel />
-        </div>
-
         {/* ===== TWO-COLUMN LAYOUT: VIDEO + SIDE PANEL ===== */}
         <div id="entrevista" style={{ scrollMarginTop: '80px', marginTop: '3rem', paddingTop: '4rem', width: '100%', position: 'relative' }}>
-          <SectionSideLabel number="5" title="ENTREVISTA: BEATO/GEDDY LEE" />
+          <SectionSideLabel number="3" title="ENTREVISTA: BEATO/GEDDY LEE" />
           <h2 className="interview-section-title" style={{
             fontSize: 'clamp(1.8rem, 4vw, 3rem)',
             fontWeight: '900',
@@ -575,6 +532,51 @@ const App = () => {
 
 
 
+
+        {/* ===== SUPPORT SECTION (MOVED UP) ===== */}
+        <section className="footer" id="apoio" ref={footerRef} style={{ position: 'relative' }}>
+          <SectionSideLabel number="4" title={t.navApoie} />
+          {isFooterInView && (
+            <video 
+              className="footer-video-bg" 
+              src={`${import.meta.env.BASE_URL}Banner_Animado_Leve.mp4`} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            ></video>
+          )}
+          <div className="footer-video-overlay"></div>
+
+          <div className="footer-content-wrapper" style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
+            <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: "900px" }}>
+              <BuyMeCoffeeCard 
+                title={<span style={{ fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Quero Pagar um Café para essa Zine</span>}
+                description={<span style={{ fontSize: '1.15rem', lineHeight: '1.4', display: 'block', marginTop: '10px', fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Pague um Café para a Gente para termos mais e mais <span style={{ color: '#ff8b54', fontWeight: 'bold' }}>ZINES</span></span>}
+                image={`${import.meta.env.BASE_URL}imgi_17_buy-me-a-coffee.png`} 
+                coffeeLink="https://buymeacoffee.com/portalrushzine" 
+              />
+              <PixCard 
+                title={<span style={{ fontFamily: "'BeyondTheLightedStage', sans-serif" }}>🇧🇷 <span style={{color: '#009c3b'}}>P</span><span style={{color: '#ffdf00'}}>I</span><span style={{color: '#009c3b'}}>X</span>-<span style={{color: '#ff8b54'}}>ZINE</span></span>}
+                description={<span style={{ fontSize: '1.15rem', lineHeight: '1.4', display: 'block', marginTop: '10px', fontFamily: "'BeyondTheLightedStage', sans-serif" }}>Faça um PIX e aumente as edições da <span style={{ color: '#ff8b54', fontWeight: 'bold' }}>ZINE</span> do Portal Rush Brasil.</span>}
+                borderColor="#009c3b"
+                borderBgColor="#ffdf00"
+                accentColor="#009c3b"
+                bannerImage={`${import.meta.env.BASE_URL}pix-qrcode.jpeg`} 
+                qrImage={`${import.meta.env.BASE_URL}pix-qrcode.jpeg`} 
+              />
+            </div>
+
+          </div>
+        </section>
+
+        {/* ===== 15 ANOS DE CONTEUDOS (MOVED FROM BOTTOM) ===== */}
+        <div id="conteudos" style={{ position: 'relative', paddingTop: '4rem' }}>
+          <SectionSideLabel number="5" title="15 ANOS DE CONTEÚDOS SOBRE O RUSH" />
+          <CardCarousel />
+        </div>
+
+        
       </section>
 
       {/* ===== INTERACTIVE SCULPTURE EASTER EGG ===== */}

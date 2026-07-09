@@ -639,10 +639,10 @@
 
 @media (max-width: 768px) {
   .mobile-only-cover {
-    display: block;
+    display: block !important;
   }
   .desktop-only-cover {
-    display: none;
+    display: none !important;
   }
 }
 
