@@ -24,7 +24,7 @@ O projeto é estruturado em uma única página (SPA) que funciona como um "perga
 
 1. **Capa (`#capa-2`)**: Hero Section com Logo, título principal e arte de capa (SVG/Bento Layout).
 2. **Editorial (`#editorial-3`)**: Seção de texto introdutório, possivelmente apresentando o tom da edição.
-3. **A Entrevista: Beato/Geddy Lee (`#entrevista-4`)**: **(O Core Engine)** Layout de duas colunas (Dashboard-like) com iFrame do YouTube reativo. Clicar nos "Tópicos" (Acordeões laterais) altera o `videoStart`, sincronizando a leitura com os timestamps do vídeo.
+3. **A Entrevista: Beato/Geddy Lee (`#entrevista-4`)**: **(O Core Engine)** Layout de duas colunas (Dashboard-like) com iFrame do YouTube reativo. A folha física de anotação foi removida para aproximar o painel de vídeos do título. O título foi componentizado em `AnimatedTitle.jsx`, exibindo o texto *"7 Momentos da Entrevista de Geddy Lee no Rick Beato (imprescindíveis)."* e adicionando um painel controlador que executa 7 efeitos Anime.js diferentes nas letras/palavras. Clicar nos "Tópicos" (Acordeões laterais) altera o `videoStart`, sincronizando a leitura com os timestamps do vídeo.
 4. **15 Anos de Conteúdos (`#conteudos-5`)**: Um carrossel interativo (`CardCarousel`) resgatando o histórico da comunidade.
 5. **Easter Eggs (`#easter-egg-6` / `#easter-egg-v2`)**: Módulos ocultos/gamificados (`GeddyEasterEgg` e a caixa de areia `GeddyEasterEggV2`) ativados por sequências de cliques ou interações específicas do usuário.
 6. **The Big Money (`#big-money-7`)**: Componente interativo/visual.
@@ -61,6 +61,9 @@ Para guiar as próximas manutenções, melhorias e análises feitas pela Intelig
 
 | Categoria do Insight | Ponto Focal | Ação Triggered / Regra de Ouro para IAs |
 | :--- | :--- | :--- |
+| **Nomenclatura (UX)** | Termos do Projeto | No contexto deste Zine (e em Landing Pages e SPAs modernas), a palavra correta para "capítulos" é **Dobras (Folds)** ou **Seções (Sections)**. A IA e os devs devem utilizar essa taxonomia. |
+| **Comunicação Técnica** | Restrição de Vocabulário | **JAMAIS** utilizar o verbo amador **"MEXER"** em documentações, relatórios de alteração ou commits. Deve-se empregar terminologias formais de desenvolvimento e design, como: **Animar, Transladar, Manipular, Rotacionar, Transformar, Escalar, Ajustar ou Refatorar**. |
+| **Animações (Microinterações)** | Anime.js (`animejs`) | Utilizamos o `animejs` (sintaxe V3 estável via pacote npm) para animações complexas de translação e rotação em elementos DOM. **Regra:** Não utilize importações via CDN (`esm.sh`) de versões alpha/beta. Efeitos devem ser injetados em `useEffect` observando `useInView` do `framer-motion`. |
 | **Integridade de Design** | Efeitos Holo e 3D | A classe `holographic-card` e o cálculo de mouse `(centerY - y) / 15` são artesanais. **Regra:** Nunca alterar a lógica de ref do mouse sem testar a distorção da perspectiva em telas ultrawide. |
 | **Crescimento (Escala)** | `translations.jsx` e Mapeamento de Tópicos | O array gerado por `getTopics(t)` no `App.jsx` é a alma da seção 5. **Regra:** Para adicionar novos vídeos, adicione as chaves em `translations.jsx` e crie um novo bloco em `getTopics` respeitando o ícone e o `videoStart`. |
 | **Experiência (UX)** | Acordeões e Scroll Suave | O cálculo de fechamento de card `window.scrollTo({ top: y - 120 })` compensa a navbar. **Regra:** Se a Navbar mudar de tamanho, esse offset (`120`) deve ser calibrado. |

@@ -25,6 +25,7 @@ import { BigMoneySection } from './components/ui/BigMoneySection';
 import { EditorialSection } from './components/ui/EditorialSection';
 import { BlahahaSection } from './components/ui/BlahahaSection';
 import { SectionSideLabel } from './components/ui/SectionSideLabel';
+import { AnimatedTitle } from './components/ui/AnimatedTitle';
 import './index.css';
 import './hero.css';
 
@@ -389,7 +390,7 @@ const App = () => {
 
       {/* ===== DASHBOARD SECTION (CAPA) ===== */}
       <section className="dashboard-section" id="capa-2" style={{ position: 'relative', paddingTop: '4rem' }}>
-        <SectionSideLabel number="2" title="CAPA" />
+        <SectionSideLabel number="2" title={t.navCapa} animatedLogo={true} />
         <div className="bento-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', zIndex: 10, gap: '2rem', width: '100%' }}>
           <div className="hero-zine-content-stack" style={{ width: '100%', alignItems: 'center' }}>
             {/* Zine Cover SVG & Flash Mobile Version */}
@@ -439,44 +440,14 @@ const App = () => {
 
         {/* ===== EDITORIAL SECTION (SECOND FOLD) ===== */}
         <div id="editorial-3" style={{ position: 'relative', paddingTop: '4rem' }}>
-          <SectionSideLabel number="3" title="EDITORIAL" />
+          <SectionSideLabel number="3" title={t.navEditorial} animatedLogo={true} />
           <EditorialSection t={t} language={language} />
         </div>
 
         {/* ===== TWO-COLUMN LAYOUT: VIDEO + SIDE PANEL ===== */}
         <div id="entrevista-4" style={{ scrollMarginTop: '80px', marginTop: '3rem', paddingTop: '4rem', width: '100%', position: 'relative' }}>
-          <SectionSideLabel number="4" title="ENTREVISTA: BEATO/GEDDY LEE" />
-          <h2 className="interview-section-title" style={{
-            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
-            fontWeight: '900',
-            color: '#fffdf6',
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            fontFamily: "'Neue Machina', 'Helvetica Neue', Arial, sans-serif",
-            letterSpacing: '0.05em',
-            textShadow: '0 4px 15px rgba(0,0,0,0.6)',
-            paddingBottom: '14px',
-            borderBottom: '4px solid #ff5a36',
-            display: 'block',
-            maxWidth: '1400px',
-            margin: '0 auto 4.5rem auto',
-            position: 'relative',
-            zIndex: 2
-          }}>
-            Geddy Lee entrevistado no Rick Beato
-          </h2>
-
-          {/* Paper Note: NOTA7 - RUSH.png with overlay text */}
-          <div className="interview-note-container">
-            <div className="interview-note-paper">
-              <img src={`${import.meta.env.BASE_URL}NOTA7 - RUSH.png`} alt="Nota 7 Tópicos" className="note-paper-img" />
-              <div className="note-paper-text">
-                Destacamos <span className="highlight-seven-badge">7</span> tópicos <br />
-                na entrevista com <br />
-                Rick Beato
-              </div>
-            </div>
-          </div>
+          <SectionSideLabel number="4" title={t.navAEntrevista} animatedLogo={true} />
+          <AnimatedTitle />
 
           <div className="hero-main-layout" style={{ paddingTop: '0px' }}>
 
@@ -498,8 +469,22 @@ const App = () => {
             <aside className="hero-side-panel">
               {topics.map(topic => {
                 const isExpanded = expandedTopic === topic.id;
+                const hasAnyActive = expandedTopic !== null;
+                const isInactive = hasAnyActive && !isExpanded;
                 return (
-                  <div key={topic.id} className="accordion-item">
+                  <div 
+                    key={topic.id} 
+                    className="accordion-item"
+                    style={{
+                      maxHeight: isInactive ? '0px' : '900px',
+                      opacity: isInactive ? 0 : 1,
+                      transform: isInactive ? 'scale(0.8)' : 'scale(1)',
+                      marginBottom: isInactive ? '0px' : '12px',
+                      overflow: 'hidden',
+                      pointerEvents: isInactive ? 'none' : 'auto',
+                      transition: 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)'
+                    }}
+                  >
                     <div
                       className={`interactive-topic-card ${isExpanded ? 'card-active' : ''}`}
                       onClick={(e) => handleCardClick(topic, e)}
@@ -558,7 +543,7 @@ const App = () => {
 
         {/* ===== 15 ANOS DE CONTEUDOS (MOVED FROM BOTTOM) ===== */}
         <div id="conteudos-5" style={{ position: 'relative', paddingTop: '4rem' }}>
-          <SectionSideLabel number="5" title="15 ANOS DE CONTEÚDOS SOBRE O RUSH" />
+          <SectionSideLabel number="5" title={t.navConteudos} animatedLogo={true} />
           <CardCarousel />
         </div>
         
@@ -566,7 +551,7 @@ const App = () => {
 
       {/* ===== INTERACTIVE SCULPTURE EASTER EGG ===== */}
       <div id="easter-egg-6" style={{ position: 'relative', paddingTop: '4rem' }}>
-        <SectionSideLabel number="6" title="EASTER EGG" />
+        <SectionSideLabel number="6" title={t.navEasterEgg} />
         <GeddyEasterEgg 
           onSuccess={() => {
             setIsGershonActive(true);
@@ -578,7 +563,7 @@ const App = () => {
 
       {/* ===== THE BIG MONEY SECTION ===== */}
       <div id="big-money-7" style={{ position: 'relative', marginTop: '4rem', paddingTop: '4rem' }}>
-        <SectionSideLabel number="7" title="THE BIG MONEY" />
+        <SectionSideLabel number="7" title={t.navBigMoney} />
         <BigMoneySection language={language} />
       </div>
 
@@ -690,7 +675,7 @@ const App = () => {
 
       {/* ===== CAMISAS DO RUSH (BANNERS MOVED FROM TOP) ===== */}
       <div id="camisas-10" style={{ position: 'relative', padding: '4rem 24px 6rem 24px', backgroundColor: '#111' }}>
-        <SectionSideLabel number="10" title={language === 'pt' ? 'CAMISAS DO RUSH' : language === 'en' ? 'RUSH SHIRTS' : 'CAMISETAS DE RUSH'} />
+        <SectionSideLabel number="10" title={t.navCamisas} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div className="footer-banners-container">
             {[
@@ -713,7 +698,7 @@ const App = () => {
 
       {/* ===== BLAH BLAH BLAH HUMOR SECTION ===== */}
       <div style={{ position: 'relative' }}>
-        <SectionSideLabel number="11" title="BLAH-BLAH-HA!!!" />
+        <SectionSideLabel number="11" title={t.navBlahaha} />
         <BlahahaSection t={t} language={language} />
       </div>
 
