@@ -485,7 +485,7 @@ const App = () => {
                       maxHeight: isInactive ? '0px' : '900px',
                       opacity: isInactive ? 0 : 1,
                       transform: isInactive ? 'scale(0.8)' : 'scale(1)',
-                      marginBottom: isInactive ? '0px' : '12px',
+                      marginBottom: isInactive ? '0px' : '18px',
                       overflow: 'hidden',
                       pointerEvents: isInactive ? 'none' : 'auto',
                       transition: 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)'
