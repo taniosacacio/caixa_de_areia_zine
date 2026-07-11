@@ -20,17 +20,20 @@ O **Portal Rush Zine** não é um site tradicional; ele é concebido como uma **
 O projeto é estruturado em uma única página (SPA) que funciona como um "pergaminho" dividido em múltiplas **"Dobras" (Seções)**, ancoradas por IDs no menu flutuante.
 
 ### 🗺 Mapa Dimensional da Interface (As Dobras):
-1. **Capa (`#grid`)**: Hero Section com Logo, título principal e arte de capa (SVG/Bento Layout).
-2. **Editorial (`#editorial`)**: Seção de texto introdutório, possivelmente apresentando o tom da edição.
-3. **Apoie o Portal (`#apoio`)**: Cartões interativos (Buy Me a Coffee e PixCard) com background em vídeo para conversão e engajamento financeiro da comunidade.
-4. **15 Anos de Conteúdos (`#conteudos`)**: Um carrossel interativo (`CardCarousel`) resgatando o histórico da comunidade.
-5. **A Entrevista: Beato/Geddy Lee (`#entrevista`)**: **(O Core Engine)** Layout de duas colunas (Dashboard-like) com iFrame do YouTube reativo. Clicar nos "Tópicos" (Acordeões laterais) altera o `videoStart`, sincronizando a leitura com os timestamps do vídeo.
-6. **Easter Eggs (`#easter-egg` / `#easter-egg-v2`)**: Módulos ocultos/gamificados (`GeddyEasterEgg` e a caixa de areia `GeddyEasterEggV2`) ativados por sequências de cliques ou interações específicas do usuário.
-7. **O Novo Capítulo: Anika Nilles (`#anika`)**: Seção escura e imersiva (estilo DW Drums), com máscara de vídeo em autoplay (`useInView`) e cartões holográficos 3D (`HolographicImage`, `Floating3DWrapper`).
-8. **Lojinha / Camisas do Rush (`#loja`)**: Banners para produtos externos com hover effects escalonados.
-9. **BLAH-BLAH-HA!!! (`#blahaha`)**: Seção de humor interativa, isolada em seus próprios componentes visuais.
-10. **Nossa Trajetória / Sobre Mim (`#RUSH-16-Anos-Alem-do-Improvavel`)**: Componente biográfico (`AboutMeSection`).
-11. **Livro My Effin' Life (`#livro`)**: Banner CTA de conversão em destaque no rodapé (Bento Card Layout).
+*Padrão de UX SEO Implementado: Cada dobra/capítulo possui uma âncora unificada que contém o nome semântico mais o número do índice (ex: #capa-2).*
+
+1. **Capa (`#capa-2`)**: Hero Section com Logo, título principal e arte de capa (SVG/Bento Layout).
+2. **Editorial (`#editorial-3`)**: Seção de texto introdutório, possivelmente apresentando o tom da edição.
+3. **A Entrevista: Beato/Geddy Lee (`#entrevista-4`)**: **(O Core Engine)** Layout de duas colunas (Dashboard-like) com iFrame do YouTube reativo. Clicar nos "Tópicos" (Acordeões laterais) altera o `videoStart`, sincronizando a leitura com os timestamps do vídeo.
+4. **15 Anos de Conteúdos (`#conteudos-5`)**: Um carrossel interativo (`CardCarousel`) resgatando o histórico da comunidade.
+5. **Easter Eggs (`#easter-egg-6` / `#easter-egg-v2`)**: Módulos ocultos/gamificados (`GeddyEasterEgg` e a caixa de areia `GeddyEasterEggV2`) ativados por sequências de cliques ou interações específicas do usuário.
+6. **The Big Money (`#big-money-7`)**: Componente interativo/visual.
+7. **Apoie o Portal (`#apoio-8`)**: Cartões interativos (Buy Me a Coffee e PixCard) com background em vídeo para conversão e engajamento financeiro da comunidade.
+8. **O Novo Capítulo: Anika Nilles (`#novo-capitulo-9`)**: Seção escura e imersiva (estilo DW Drums), com máscara de vídeo em autoplay (`useInView`) e cartões holográficos 3D (`HolographicImage`, `Floating3DWrapper`).
+9. **Lojinha / Camisas do Rush (`#camisas-10`)**: Banners para produtos externos com hover effects escalonados.
+10. **BLAH-BLAH-HA!!! (`#blahaha-11`)**: Seção de humor interativa, isolada em seus próprios componentes visuais.
+11. **Nossa Trajetória / Sobre Mim (`#sobre-mim-12`)**: Componente biográfico (`AboutMeSection`).
+12. **Livro My Effin' Life (`#livro-13`)**: Banner CTA de conversão em destaque no rodapé (Bento Card Layout).
 
 ---
 
@@ -62,6 +65,7 @@ Para guiar as próximas manutenções, melhorias e análises feitas pela Intelig
 | **Crescimento (Escala)** | `translations.jsx` e Mapeamento de Tópicos | O array gerado por `getTopics(t)` no `App.jsx` é a alma da seção 5. **Regra:** Para adicionar novos vídeos, adicione as chaves em `translations.jsx` e crie um novo bloco em `getTopics` respeitando o ícone e o `videoStart`. |
 | **Experiência (UX)** | Acordeões e Scroll Suave | O cálculo de fechamento de card `window.scrollTo({ top: y - 120 })` compensa a navbar. **Regra:** Se a Navbar mudar de tamanho, esse offset (`120`) deve ser calibrado. |
 | **Componentização** | Arquivos soltos como `translations.jsx` | Como o projeto está crescendo (`App.jsx` com > 700 linhas), o componente "Hero/Entrevista" já pede para ser isolado em `HeroSection.jsx` ou `InterviewSection.jsx`. |
+| **Interface (UI)** | Espaçamento das Dobras (SectionSideLabel) | O componente de título (`SectionSideLabel`) possui `position: absolute`. **Regra:** Todas as seções/dobras que o utilizam DEVEM ter um `paddingTop` de no mínimo `8rem` (ou `120px`) no seu contêiner principal para não sobrepor o conteúdo (como aconteceu na Entrevista entre o h2 e h3). Além disso, os títulos longos possuem quebra de linha automática. |
 
 ---
 
