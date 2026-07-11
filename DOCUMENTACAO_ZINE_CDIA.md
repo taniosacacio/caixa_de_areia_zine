@@ -65,7 +65,7 @@ Para guiar as próximas manutenções, melhorias e análises feitas pela Intelig
 | **Crescimento (Escala)** | `translations.jsx` e Mapeamento de Tópicos | O array gerado por `getTopics(t)` no `App.jsx` é a alma da seção 5. **Regra:** Para adicionar novos vídeos, adicione as chaves em `translations.jsx` e crie um novo bloco em `getTopics` respeitando o ícone e o `videoStart`. |
 | **Experiência (UX)** | Acordeões e Scroll Suave | O cálculo de fechamento de card `window.scrollTo({ top: y - 120 })` compensa a navbar. **Regra:** Se a Navbar mudar de tamanho, esse offset (`120`) deve ser calibrado. |
 | **Componentização** | Arquivos soltos como `translations.jsx` | Como o projeto está crescendo (`App.jsx` com > 700 linhas), o componente "Hero/Entrevista" já pede para ser isolado em `HeroSection.jsx` ou `InterviewSection.jsx`. |
-| **Interface (UI)** | Espaçamento das Dobras (SectionSideLabel) | O componente de título (`SectionSideLabel`) possui `position: absolute`. **Regra:** Todas as seções/dobras que o utilizam DEVEM ter um `paddingTop` de no mínimo `8rem` (ou `120px`) no seu contêiner principal para não sobrepor o conteúdo (como aconteceu na Entrevista entre o h2 e h3). Além disso, os títulos longos possuem quebra de linha automática. |
+| **Interface (UI)** | Espaçamento das Dobras (SectionSideLabel) | O componente de título (`SectionSideLabel`) passou a usar `position: relative` para empurrar naturalmente o conteúdo para baixo. **Regra:** Todas as seções que o utilizam DEVEM ter um `paddingTop` de `4rem` no seu contêiner principal para o respiro superior, e o próprio componente cuidará do respiro inferior (`margin-bottom: 3rem`). Títulos longos possuem quebra de linha automática. |
 
 ---
 

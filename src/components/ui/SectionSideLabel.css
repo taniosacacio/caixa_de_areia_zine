@@ -1,7 +1,8 @@
 .section-side-label-wrapper {
-  position: absolute;
-  top: 0px;
-  left: 20px;
+  position: relative;
+  margin-bottom: 3rem; /* respirar entre o título e o conteúdo */
+  margin-top: 1rem; 
+  padding-left: 20px;
   z-index: 50;
   display: flex;
   align-items: baseline;
@@ -11,6 +12,7 @@
   cursor: pointer;
   max-width: calc(100vw - 40px);
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .section-label-number {
@@ -35,8 +37,7 @@
 
 @media (max-width: 1024px) {
   .section-side-label-wrapper {
-    top: 20px;
-    left: 20px;
+    padding-left: 20px;
   }
   .section-label-number, .section-label-text {
     font-size: 3rem;
@@ -45,8 +46,7 @@
 
 @media (max-width: 768px) {
   .section-side-label-wrapper {
-    top: 10px;
-    left: 10px;
+    padding-left: 10px;
   }
   .section-label-number, .section-label-text {
     font-size: 2rem;

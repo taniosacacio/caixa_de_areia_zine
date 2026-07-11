@@ -388,7 +388,7 @@ const App = () => {
       </section>
 
       {/* ===== DASHBOARD SECTION (CAPA) ===== */}
-      <section className="dashboard-section" id="capa-2" style={{ position: 'relative', paddingTop: '8rem' }}>
+      <section className="dashboard-section" id="capa-2" style={{ position: 'relative', paddingTop: '4rem' }}>
         <SectionSideLabel number="2" title="CAPA" />
         <div className="bento-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', zIndex: 10, gap: '2rem', width: '100%' }}>
           <div className="hero-zine-content-stack" style={{ width: '100%', alignItems: 'center' }}>
@@ -438,13 +438,13 @@ const App = () => {
         </div>
 
         {/* ===== EDITORIAL SECTION (SECOND FOLD) ===== */}
-        <div id="editorial-3" style={{ position: 'relative', paddingTop: '8rem' }}>
+        <div id="editorial-3" style={{ position: 'relative', paddingTop: '4rem' }}>
           <SectionSideLabel number="3" title="EDITORIAL" />
           <EditorialSection t={t} language={language} />
         </div>
 
         {/* ===== TWO-COLUMN LAYOUT: VIDEO + SIDE PANEL ===== */}
-        <div id="entrevista-4" style={{ scrollMarginTop: '80px', marginTop: '3rem', paddingTop: '8rem', width: '100%', position: 'relative' }}>
+        <div id="entrevista-4" style={{ scrollMarginTop: '80px', marginTop: '3rem', paddingTop: '4rem', width: '100%', position: 'relative' }}>
           <SectionSideLabel number="4" title="ENTREVISTA: BEATO/GEDDY LEE" />
           <h2 className="interview-section-title" style={{
             fontSize: 'clamp(1.8rem, 4vw, 3rem)',
@@ -557,7 +557,7 @@ const App = () => {
 
 
         {/* ===== 15 ANOS DE CONTEUDOS (MOVED FROM BOTTOM) ===== */}
-        <div id="conteudos-5" style={{ position: 'relative', paddingTop: '8rem' }}>
+        <div id="conteudos-5" style={{ position: 'relative', paddingTop: '4rem' }}>
           <SectionSideLabel number="5" title="15 ANOS DE CONTEÚDOS SOBRE O RUSH" />
           <CardCarousel />
         </div>
@@ -565,7 +565,7 @@ const App = () => {
       </section>
 
       {/* ===== INTERACTIVE SCULPTURE EASTER EGG ===== */}
-      <div id="easter-egg-6" style={{ position: 'relative', paddingTop: '8rem' }}>
+      <div id="easter-egg-6" style={{ position: 'relative', paddingTop: '4rem' }}>
         <SectionSideLabel number="6" title="EASTER EGG" />
         <GeddyEasterEgg 
           onSuccess={() => {
@@ -577,13 +577,13 @@ const App = () => {
       </div>
 
       {/* ===== THE BIG MONEY SECTION ===== */}
-      <div id="big-money-7" style={{ position: 'relative', marginTop: '4rem', paddingTop: '8rem' }}>
+      <div id="big-money-7" style={{ position: 'relative', marginTop: '4rem', paddingTop: '4rem' }}>
         <SectionSideLabel number="7" title="THE BIG MONEY" />
         <BigMoneySection language={language} />
       </div>
 
       {/* ===== SUPPORT SECTION (MOVED TO BOTTOM) ===== */}
-      <section className="footer" id="apoio-8" ref={footerRef} style={{ position: 'relative', paddingTop: '8rem' }}>
+      <section className="footer" id="apoio-8" ref={footerRef} style={{ position: 'relative', paddingTop: '4rem' }}>
         <SectionSideLabel number="8" title={t.navApoie} />
         {isFooterInView && (
           <video 
@@ -619,7 +619,7 @@ const App = () => {
       </section>
 
       {/* ===== ANIKA NILLES SECTION (DW DRUMS STYLE) ===== */}
-      <section className="anika-dw-section" id="novo-capitulo-9" ref={anikaRef} style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#111', paddingTop: '8rem' }}>
+      <section className="anika-dw-section" id="novo-capitulo-9" ref={anikaRef} style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#111', paddingTop: '4rem' }}>
         <SectionSideLabel number="9" title={t.navONovoCapitulo} />
         {/* Video Background Mask */}
         <div className="anika-video-mask">
@@ -689,7 +689,7 @@ const App = () => {
       </section>
 
       {/* ===== CAMISAS DO RUSH (BANNERS MOVED FROM TOP) ===== */}
-      <div id="camisas-10" style={{ position: 'relative', padding: '8rem 24px 6rem 24px', backgroundColor: '#111' }}>
+      <div id="camisas-10" style={{ position: 'relative', padding: '4rem 24px 6rem 24px', backgroundColor: '#111' }}>
         <SectionSideLabel number="10" title={language === 'pt' ? 'CAMISAS DO RUSH' : language === 'en' ? 'RUSH SHIRTS' : 'CAMISETAS DE RUSH'} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div className="footer-banners-container">
@@ -724,7 +724,7 @@ const App = () => {
       </div>
 
       {/* ===== CONTEXTUAL BOOK BANNER (MOVED DOWN) ===== */}
-      <section className="bento-hero" id="livro-13" style={{ minHeight: 'auto', padding: '8rem 5% 4rem 5%', display: 'flex', justifyContent: 'center', position: 'relative' }}>
+      <section className="bento-hero" id="livro-13" style={{ minHeight: 'auto', padding: '4rem 5% 4rem 5%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
         <SectionSideLabel number="13" title={t.navLivro} />
         <div className="bento-grid-footer" style={{ marginTop: 0, width: '100%', maxWidth: '1200px' }}>
           <a 
